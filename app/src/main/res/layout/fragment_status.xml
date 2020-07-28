@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layoutDirection="ltr"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/TxtNetworkStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/NetworkProvider"
+        android:textColor="@color/primary_text"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TxtGpsStatus" />
+
+    <TextView
+        android:id="@+id/TxtGpsStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/GpsProvider"
+        android:textColor="@color/primary_text"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TxtCurrentLocation" />
+
+    <ImageView
+        android:id="@+id/imageViewStatus"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/location_1" />
+
+    <TextView
+        android:id="@+id/TxtCurrentLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/CurrentLocation"
+        android:textColor="@color/primary_text"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TxtCurrentLocationValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/NotAvailable"
+        app:layout_constraintBottom_toBottomOf="@+id/TxtCurrentLocation"
+        app:layout_constraintStart_toEndOf="@+id/TxtCurrentLocation"
+        app:layout_constraintTop_toTopOf="@+id/TxtCurrentLocation" />
+
+    <TextView
+        android:id="@+id/TxtGpsStatusValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/enable"
+        app:layout_constraintBottom_toBottomOf="@+id/TxtGpsStatus"
+        app:layout_constraintStart_toEndOf="@+id/TxtGpsStatus"
+        app:layout_constraintTop_toTopOf="@+id/TxtGpsStatus" />
+
+    <TextView
+        android:id="@+id/TxtNetworkStatusValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/disable"
+        app:layout_constraintBottom_toBottomOf="@+id/TxtNetworkStatus"
+        app:layout_constraintStart_toEndOf="@+id/TxtNetworkStatus"
+        app:layout_constraintTop_toTopOf="@+id/TxtNetworkStatus" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

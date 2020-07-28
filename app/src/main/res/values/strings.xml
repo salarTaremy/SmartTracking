@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">SmartTracking</string>
+    <string name="title_home">Home</string>
+    <string name="title_status">Stats</string>
+    <string name="title_settings">Settings</string>
+    <string name="TrackingService">Tracking Service</string>
+    <string name="ServiceActived">Service Actived</string>
+    <string name="ServiceDeactivated">Service Deactivated</string>
+    <string name="CurrentLocation">Current Location:</string>
+    <string name="GpsProvider">Gps Provider :</string>
+    <string name="NetworkProvider">Network Provider :</string>
+    <string name="NotAvailable">Not Available</string>
+    <string name="disable">Disable</string>
+    <string name="enable">Enable</string>
+    <string name="EnterImei">لطفا شناسه IMEI  را وارد کنید:</string>
+    <string name="Confirm">تایید</string>
+</resources>
