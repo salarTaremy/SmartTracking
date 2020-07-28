@@ -6,6 +6,7 @@ import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
@@ -26,6 +27,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import smart.tracking.service.Finder.LocationFinder;
+import smart.tracking.service.Receivers.BatteryChanged;
 import smart.tracking.service.Receivers.MyAdmin;
 
 public class MainActivity extends AppCompatActivity {
@@ -53,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
         GetPermission();
         CheckImei();
         Load();
+        //for register BATTERY_CHANGED Broadcast Receiver ( because can not register it from manifest) :
+        this.registerReceiver(new BatteryChanged(), new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
     }
 
     private void CheckImei() {
