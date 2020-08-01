@@ -57,7 +57,7 @@ public class MyServer {
         myLocation.Time         =Short.valueOf(HH+MM);
         myLocation.Accuracy     =location.getAccuracy();
         myLocation.Speed        =location.getSpeed();
-        myLocation.BatteryLevel = App.getBatteryLevel();
+        myLocation.Battery = App.getBatteryLevel();
         SendLocationToServer(myLocation);
         //Logcat.Send("Complate ...");
         //new MyLocationDbHelper(getApplicationContext()).create(myLocation);

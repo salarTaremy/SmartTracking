@@ -49,11 +49,9 @@ public class MyLocation {
     @Expose
     public float Bearing;
 
-
-
-    @SerializedName("batteryLevel")
+    @SerializedName("battery")
     @Expose
-    public int BatteryLevel;
+    public float Battery;
 
 }
 
