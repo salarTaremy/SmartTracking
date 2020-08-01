@@ -11,12 +11,30 @@ android {
         versionName "1.0 beta"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+//    buildTypes {
+//        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//        }
+//    }
+
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig getSigningConfig()
+            android.applicationVariants.all { variant ->
+                variant.outputs.all {
+                    def appName = "SmartTracking"
+                    outputFileName = appName+"-${variant.versionName}.apk"    }
+            }
         }
     }
+
+
+
+
 }
 
 dependencies {
