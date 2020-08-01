@@ -2,6 +2,7 @@ package smart.tracking.service;
 
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.location.Location;
 import java.util.Calendar;
 import retrofit2.Call;
@@ -46,6 +47,8 @@ public class MyServer {
         }
 
 
+
+
         MyLocation myLocation   =new MyLocation();
         myLocation.IMEI         = new  App().IMEI();
         myLocation.Provider     =location.getProvider();
@@ -57,8 +60,11 @@ public class MyServer {
         myLocation.Time         =Short.valueOf(HH+MM);
         myLocation.Accuracy     =location.getAccuracy();
         myLocation.Speed        =location.getSpeed();
+        myLocation.BatteryLevel = App.getBatteryLevel();
         SendLocationToServer(myLocation);
         //Logcat.Send("Complate ...");
         //new MyLocationDbHelper(getApplicationContext()).create(myLocation);
     }
+
+
 }

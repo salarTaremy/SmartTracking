@@ -21,6 +21,19 @@ public class App extends Application {
     public static final String ConfigName = "Config";
     public  static  final  int ApiVersionForManualIMEI = Build.VERSION_CODES.Q;
 
+    public static int getBatteryLevel() {
+        int BatteryLevel = 100;
+        try {
+            String name = "BatteryLevel";
+            final SharedPreferences shPref =  App.getAppContext().getSharedPreferences(name,Context.MODE_PRIVATE);
+            String val = shPref.getString(name, null);
+            BatteryLevel = Integer.valueOf(val);
+        } catch (Exception ex){
+            BatteryLevel = 0 ;
+        }
+        return  BatteryLevel;
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
