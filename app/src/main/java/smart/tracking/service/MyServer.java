@@ -46,9 +46,6 @@ public class MyServer {
             MM = "0" + MM;
         }
 
-
-
-
         MyLocation myLocation   =new MyLocation();
         myLocation.IMEI         = new  App().IMEI();
         myLocation.Provider     =location.getProvider();
