@@ -6,13 +6,18 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
+
+import java.util.List;
 
 
 public class App extends Application {
@@ -89,6 +94,53 @@ public class App extends Application {
             e.printStackTrace();
         }
         return "not_found";
+    }
+
+
+
+    public static boolean isMockSettingsON() {
+        try {
+            // returns true if mock location enabled, false if not enabled.
+            if (Settings.Secure.getString(context.getContentResolver(),
+                    Settings.Secure.ALLOW_MOCK_LOCATION).equals("0"))
+                return false;
+            else
+                return true;
+        } catch ( Exception ex){
+             return  true;
+        }
+    }
+
+
+    public static int areThereMockPermissionApps() {
+        int count = 0;
+
+        PackageManager pm = context.getPackageManager();
+        List<ApplicationInfo> packages =
+                pm.getInstalledApplications(PackageManager.GET_META_DATA);
+
+        for (ApplicationInfo applicationInfo : packages) {
+            try {
+                PackageInfo packageInfo = pm.getPackageInfo(applicationInfo.packageName,
+                        PackageManager.GET_PERMISSIONS);
+
+                // Get Permissions
+                String[] requestedPermissions = packageInfo.requestedPermissions;
+
+                if (requestedPermissions != null) {
+                    for (int i = 0; i < requestedPermissions.length; i++) {
+                        if (requestedPermissions[i]
+                                .equals("android.permission.ACCESS_MOCK_LOCATION")
+                                && !applicationInfo.packageName.equals(context.getPackageName())) {
+                            count++;
+                        }
+                    }
+                }
+            } catch (PackageManager.NameNotFoundException e) {
+                Log.e("Got exception " , e.getMessage());
+            }
+        }
+        return  count;
     }
 
 

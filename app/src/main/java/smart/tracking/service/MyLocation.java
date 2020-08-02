@@ -53,5 +53,19 @@ public class MyLocation {
     @Expose
     public float Battery;
 
+    @SerializedName("mock")
+    @Expose
+    public boolean Mock;
+
+    @SerializedName("mockState")
+    @Expose
+    public boolean MockState;
+
+    @SerializedName("mockAppCount")
+    @Expose
+    public int MockAppCount;
+
+
+
 }
 

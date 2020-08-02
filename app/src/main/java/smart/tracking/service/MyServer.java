@@ -4,7 +4,11 @@ package smart.tracking.service;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.location.Location;
+import android.os.Build;
+
 import java.util.Calendar;
+import java.util.Date;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -38,7 +42,7 @@ public class MyServer {
         Logcat.Send("Sending...");
         String str =   location.getProvider() +" : "+String.valueOf( location.getLatitude())+","+ String.valueOf( location.getLongitude());
         Logcat.Send(str);
-        java.util.Date currentTime        = Calendar.getInstance().getTime();
+        Date currentTime        = Calendar.getInstance().getTime();
         String HH , MM ;
         HH=  String.valueOf(Calendar.getInstance().getTime().getHours());
         MM=  String.valueOf(Calendar.getInstance().getTime().getMinutes());
@@ -58,6 +62,14 @@ public class MyServer {
         myLocation.Accuracy     =location.getAccuracy();
         myLocation.Speed        =location.getSpeed();
         myLocation.Battery = App.getBatteryLevel();
+        myLocation.MockState = App.isMockSettingsON();
+        myLocation.MockAppCount = App.areThereMockPermissionApps();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
+            myLocation.Mock =   location.isFromMockProvider();
+        } else {
+            myLocation.Mock = false ;
+        }
+
         SendLocationToServer(myLocation);
         //Logcat.Send("Complate ...");
         //new MyLocationDbHelper(getApplicationContext()).create(myLocation);
