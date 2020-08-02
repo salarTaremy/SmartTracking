@@ -20,8 +20,13 @@ android {
 
 
     buildTypes {
+        debug {
+            minifyEnabled true
+            //useProguard false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig getSigningConfig()
             android.applicationVariants.all { variant ->
