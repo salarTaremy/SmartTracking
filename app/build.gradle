@@ -1,9 +1,15 @@
 apply plugin: 'com.android.application'
-//FOR FIREBASE :
 apply plugin: 'com.google.gms.google-services'
 
 //firebase Apply the Crashlytics Gradle plugin
 apply plugin: 'com.google.firebase.crashlytics'
+
+repositories {
+    maven {
+        url "https://jitpack.io"
+    }
+    jcenter()
+}
 
 android {
     compileSdkVersion 29
