@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "284018602284",
+    "firebase_url": "https://smart-tracking-8bd6b.firebaseio.com",
+    "project_id": "smart-tracking-8bd6b",
+    "storage_bucket": "smart-tracking-8bd6b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:284018602284:android:5c9f51cc947b453fa17c89",
+        "android_client_info": {
+          "package_name": "smart.tracking.service"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "284018602284-7i7m5vuu6t78421f1qe1815s4tknva9a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRWLCntcQSZkx00L5-BHbcJ7HqgKgM4hQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "284018602284-7i7m5vuu6t78421f1qe1815s4tknva9a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
