@@ -22,6 +22,9 @@ android {
         versionName "1.0 beta"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
+
+
     buildTypes {
         debug {
             minifyEnabled false
